@@ -10,7 +10,7 @@ function Home() {
         {id: 3, title: "The Matrix", release_date: "1998"},
     ]
 
-    const handleSearch = () => {
+    const handleSearch = (e) => {
         e.preventDefault()
         alert(searchQuery);
         setSearchQuery("")
@@ -24,7 +24,7 @@ function Home() {
                 placeholder="Search for movies...." 
                 className="search-input" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
                 <button type="submit" className="search-button">Search</button>    
-            </form>| 
+            </form> 
             <div className="movies-grid">
                 {movies.map((movie) => (
                   movie.title.toLowerCase().startsWith(searchQuery) &&
